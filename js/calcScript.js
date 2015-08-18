@@ -77,22 +77,25 @@ document.getElementById("/").onclick = function() {
 document.getElementById("=").onclick = function() {
 	jsCalcNumB = parseInt(document.getElementById("number").innerHTML)
 	if(jsCalcNumB) {
-		document.getElementById("prevNumber").innerHTML = "result :";
 		switch(jsCalcOper) {
 			case "+":
+				document.getElementById("prevNumber").innerHTML = ">"+ jsCalcNumA + jsCalcOper + jsCalcNumB + "=";
 				document.getElementById("number").innerHTML = jsCalcNumA + jsCalcNumB;
 				jsCalcOper = "";
 				break;
 			case "-":
 				document.getElementById("number").innerHTML = jsCalcNumA - jsCalcNumB;
+				document.getElementById("prevNumber").innerHTML = ">"+ jsCalcNumA + jsCalcOper + jsCalcNumB + "=";
 				jsCalcOper = "";
 				break;
 			case "x":
 				document.getElementById("number").innerHTML = jsCalcNumA * jsCalcNumB;
+				document.getElementById("prevNumber").innerHTML = ">"+ jsCalcNumA + jsCalcOper + jsCalcNumB + "=";
 				jsCalcOper = "";
 				break;
 			case "/":
 				document.getElementById("number").innerHTML = jsCalcNumA / jsCalcNumB;
+				document.getElementById("prevNumber").innerHTML = ">"+ jsCalcNumA + jsCalcOper + jsCalcNumB + "=";
 				jsCalcOper = "";
 				break;
 			default:
