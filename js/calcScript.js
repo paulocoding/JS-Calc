@@ -6,6 +6,8 @@ var jsCalcOper = "";
 document.getElementById("C").onclick = function() {
 	document.getElementById("number").innerHTML= "";
 	document.getElementById("prevNumber").innerHTML = "";
+	jsCalcNumA = 0;
+	jsCalcNumB = 0;
 }
 
 document.getElementById("0").onclick = function() {
@@ -79,22 +81,26 @@ document.getElementById("=").onclick = function() {
 		switch(jsCalcOper) {
 			case "+":
 				document.getElementById("number").innerHTML = jsCalcNumA + jsCalcNumB;
+				jsCalcOper = "";
 				break;
 			case "-":
 				document.getElementById("number").innerHTML = jsCalcNumA - jsCalcNumB;
+				jsCalcOper = "";
 				break;
 			case "x":
 				document.getElementById("number").innerHTML = jsCalcNumA * jsCalcNumB;
+				jsCalcOper = "";
 				break;
 			case "/":
 				document.getElementById("number").innerHTML = jsCalcNumA / jsCalcNumB;
+				jsCalcOper = "";
 				break;
 			default:
-				document.getElementById("number").innerHTML = "";
+				jsCalcNumA = parseInt(document.getElementById("number").innerHTML)
 				break;			
 		}
 	}
 	
 	jsCalcNumA = 0;
 }
-//parseInt(document.getElementById("number").innerHTML)
+
